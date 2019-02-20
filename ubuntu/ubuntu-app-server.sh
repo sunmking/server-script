@@ -48,4 +48,14 @@ sudo apt-get -y autoremove
 
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 
+printf "${YELLOWCOLOR}Installing Mysql5.7 ${NC} \n"
+
+sudo apt-get install mysql-client-5.7 mysql-server-5.7
+
+sudo service mysql restart
+
+sudo systemctl enable mysql
+sudo systemctl enable nginx
+sudo systemctl enable php7.2-fpm
+
 printf "${GREENCOLOR}Everything is all set! ${NC} \n\n"
